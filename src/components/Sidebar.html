@@ -1,0 +1,21 @@
+<div class="icon-sidebar">
+    <img class="icon-sidebar__dance" src="https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif" alt="">
+</div>
+<Audio />
+<style type="text/scss">
+  .icon-sidebar {
+    @media screen and (min-width: 992px){
+			display: none;
+    }
+  }
+  .icon-sidebar__dance {
+    width: 115px;
+  }
+  .glry + .glry { opacity: 0; }
+</style>
+<script>
+  import Audio from './Audio.html';
+  export default {
+		components: { Audio }
+	}
+</script>

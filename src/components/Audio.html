@@ -1,0 +1,49 @@
+<audio id="myAudio" ref:audio autoplay>
+    <!-- <source src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Kenny_G_-_Forever_In_Love.ogg" type="audio/ogg"> -->
+    <!-- <source src="https://ia800503.us.archive.org/4/items/CarelessWhisper_532/33CarelessWhisper.ogg" /> -->
+    <source src={file} />
+    <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+    Your browser does not support the audio element.
+    <p>Click the buttons to play or pause the audio.</p>
+  </audio>
+  
+  <div class="audio--play" on:click="play()" type="button">
+    <img src="https://media.giphy.com/media/MrWvrkKMclJjq/giphy.gif" alt="">
+  </div>
+
+  <style>
+    .audio--play {
+      cursor: pointer;
+    }
+    .audio--play img {
+      width: 110px;
+    }
+  </style>
+
+  <script>
+    export default {
+      oncreate() {
+        const audioArray = [
+          'https://ia800503.us.archive.org/4/items/CarelessWhisper_532/33CarelessWhisper.ogg',
+          'https://upload.wikimedia.org/wikipedia/commons/c/c6/Kenny_G_-_Forever_In_Love.ogg'
+        ]
+
+        this.set({file: audioArray[Math.round(Math.random())]})
+        this.set({play: false})
+        
+      },
+      methods: {
+        play() {
+          const { play } = this.get();
+          const music = this.refs.audio;
+          console.log(play)
+          play ? music.pause(): music.play();
+          this.set({play: !play})
+        },
+        pause() {
+          const { audio } = this.refs;
+          audio.pause();
+        }
+      }
+    }
+  </script>
