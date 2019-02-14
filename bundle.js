@@ -1,2 +1,940 @@
-var app=function(){"use strict";function t(){}function e(t,e){for(var n in e)t[n]=e[n];return t}function n(t,e){for(var n in e)t[n]=1;return t}function s(t){t()}function a(t,e){t.appendChild(e)}function c(t,e,n){t.insertBefore(e,n)}function i(t){t.parentNode.removeChild(t)}function o(t){return document.createElement(t)}function r(t){return document.createTextNode(t)}function l(){return Object.create(null)}function h(t){t._lock=!0,f(t._beforecreate),f(t._oncreate),f(t._aftercreate),t._lock=!1}function _(t,e){t._handlers=l(),t._slots=l(),t._bind=e._bind,t._staged={},t.options=e,t.root=e.root||t,t.store=e.store||t.root.store,e.root||(t._beforecreate=[],t._oncreate=[],t._aftercreate=[])}function f(t){for(;t&&t.length;)t.shift()()}var g={destroy:function(e){this.destroy=t,this.fire("destroy"),this.set=t,this._fragment.d(!1!==e),this._fragment=null,this._state={}},get:function(){return this._state},fire:function(t,e){var n=t in this._handlers&&this._handlers[t].slice();if(n)for(var s=0;s<n.length;s+=1){var a=n[s];if(!a.__calling)try{a.__calling=!0,a.call(this,e)}finally{a.__calling=!1}}},on:function(t,e){var n=this._handlers[t]||(this._handlers[t]=[]);return n.push(e),{cancel:function(){var t=n.indexOf(e);~t&&n.splice(t,1)}}},set:function(t){this._set(e({},t)),this.root._lock||h(this.root)},_recompute:t,_set:function(t){var n=this._state,s={},a=!1;for(var c in t=e(this._staged,t),this._staged={},t)this._differs(t[c],n[c])&&(s[c]=a=!0);a&&(this._state=e(e({},n),t),this._recompute(s,this._state),this._bind&&this._bind(s,this._state),this._fragment&&(this.fire("state",{changed:s,current:this._state,previous:n}),this._fragment.p(s,this._state),this.fire("update",{changed:s,current:this._state,previous:n})))},_stage:function(t){e(this._staged,t)},_mount:function(t,e){this._fragment[this._fragment.i?"i":"m"](t,e||null)},_differs:function(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}},d={play(){const{play:t}=this.get(),e=this.refs.audio;console.log(t),t?e.pause():e.play(),this.set({play:!t})},pause(){const{audio:t}=this.refs;t.pause()}};function m(t){_(this,t),this.refs={},this._state=e({},t.data),this._intro=!!t.intro,this._fragment=function(t,e){var n,l,h,_,f,g,d;function m(e){t.play()}return{c(){var t,s,a;n=o("audio"),l=o("source"),h=r("\n    \n    Your browser does not support the audio element.\n    "),(_=o("p")).textContent="Click the buttons to play or pause the audio.",f=r("\n  \n  "),(g=o("div")).innerHTML='<img src="https://media.giphy.com/media/MrWvrkKMclJjq/giphy.gif" alt="" class="svelte-1f6eip">',l.src=e.file,n.id="myAudio",n.autoplay=!0,t="click",s=m,g.addEventListener(t,s,a),g.className="audio--play svelte-1f6eip",function(t,e,n){null==n?t.removeAttribute(e):t.setAttribute(e,n)}(g,"type","button")},m(e,s){c(e,n,s),a(n,l),a(n,h),a(n,_),t.refs.audio=n,c(e,f,s),c(e,g,s),d=!0},p(t,e){t.file&&(l.src=e.file)},i(t,e){d||this.m(t,e)},o:s,d(e){var s,a,c;e&&i(n),t.refs.audio===n&&(t.refs.audio=null),e&&(i(f),i(g)),s="click",a=m,g.removeEventListener(s,a,c)}}}(this,this._state),this.root._oncreate.push(()=>{(function(){this.set({file:["https://ia800503.us.archive.org/4/items/CarelessWhisper_532/33CarelessWhisper.ogg","https://upload.wikimedia.org/wikipedia/commons/c/c6/Kenny_G_-_Forever_In_Love.ogg"][Math.round(Math.random())]}),this.set({play:!1})}).call(this),this.fire("update",{changed:n({},this._state),current:this._state})}),t.target&&(this._fragment.c(),this._mount(t.target,t.anchor),h(this)),this._intro=!0}function p(n){var s,a,l,f,g;_(this,n),this._state=e({},n.data),this._intro=!!n.intro,this._fragment=(s=this,this._state,g=new m({root:s.root,store:s.store}),{c(){(a=o("div")).innerHTML='<img class="icon-sidebar__dance svelte-c9dmgb" src="https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif" alt="">',l=r("\n"),g._fragment.c(),a.className="icon-sidebar svelte-c9dmgb"},m(t,e){c(t,a,e),c(t,l,e),g._mount(t,e),f=!0},p:t,i(t,e){f||this.m(t,e)},o(t){f&&(g&&g._fragment.o(t),f=!1)},d(t){t&&(i(a),i(l)),g.destroy(t)}}),n.target&&(this._fragment.c(),this._mount(n.target,n.anchor),h(this)),this._intro=!0}e(m.prototype,g),e(m.prototype,d),e(p.prototype,g);var v=0,u=document.getElementsByClassName("glry");function b(n){var a,l,h,f,g,d,m,p,v,u,b,y,C,j,N,E,F,w,D,k,L,M,x,A,B,I,P,T,Y,q,G,H;_(this,n),this._state=e({},n.data),this._intro=!!n.intro,this._fragment=(this._state,{c(){a=o("img"),l=r("\n"),h=o("img"),f=r("\n\n"),g=o("img"),d=r("\n"),m=o("img"),p=r("\n"),v=o("img"),u=r("\n"),b=o("img"),y=r("\n"),C=o("img"),j=r("\n"),N=o("img"),E=r("\n"),F=o("img"),w=r("\n"),D=o("img"),k=r("\n"),L=o("img"),M=r("\n"),x=o("img"),A=r("\n"),B=o("img"),I=r("\n"),P=o("img"),T=r("\n"),Y=o("img"),q=r("\n"),G=o("img"),a.className="glry svelte-chbe5j",a.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/482919_321495741302127_350042199_n.jpg?_nc_cat=100&_nc_ht=scontent.fcgh22-1.fna&oh=25be4d41ca5242295bc974a34c41123d&oe=5CEAD6D9",a.alt="Fill Murray",h.className="glry svelte-chbe5j",h.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/1607062_496094667175566_1459171271_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=adb7c8ae3a95527e96a0e681d436ee97&oe=5CF6BDD1",h.alt="Place Cage",g.className="glry svelte-chbe5j",g.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11149390_744516519000045_2967058983600643140_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=7376a636ed9d3749cb906e48f6dd8256&oe=5CE8BE92",g.alt="Place Cage",m.className="glry svelte-chbe5j",m.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11203077_751857984932565_2038460729392045720_n.jpg?_nc_cat=103&_nc_ht=scontent.fcgh22-1.fna&oh=294516b194dfba278bc46c57981e0482&oe=5CDF1241",m.alt="Place Cage",v.className="glry svelte-chbe5j",v.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11330044_761620043956359_7177285383957824631_n.jpg?_nc_cat=109&_nc_ht=scontent.fcgh22-1.fna&oh=6b5632f4823a30ca479ea80c3883722f&oe=5CE4E66B",v.alt="Place Cage",b.className="glry svelte-chbe5j",b.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11427736_776285782489785_5376530598464170536_n.jpg?_nc_cat=102&_nc_ht=scontent.fcgh22-1.fna&oh=4e85ef78b39be5300fc5530527ef65c6&oe=5CE16D8B",b.alt="Place Cage",C.className="glry svelte-chbe5j",C.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11053585_782396231878740_8757566933195016366_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgh22-1.fna&oh=5aac9edebe06c2accec6d51e1a87c0e5&oe=5CEBFFCF",C.alt="Place Cage",N.className="glry svelte-chbe5j",N.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11800428_794852727299757_4887307670715962091_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=e1697931b560a72fa111162761620fec&oe=5CEC2DD3",N.alt="Place Cage",F.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/1002361_838302252954804_1853296951518793956_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=c1aa9395cea9726546f8fd4966939ffa&oe=5CED795B",F.alt="",F.className="glry svelte-chbe5j",D.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/12549088_883453608439668_60351576491173231_n.jpg?_nc_cat=106&_nc_ht=scontent.fcgh22-1.fna&oh=85f9189684afc92f2aa738de7d0dac48&oe=5CF51D86",D.alt="",D.className="glry svelte-chbe5j",L.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/934732_920910801360615_2149040823513429832_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgh22-1.fna&oh=bf02924ee5a089d2b02f480b7897c13b&oe=5CF71BD2",L.alt="",L.className="glry svelte-chbe5j",x.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/14591593_1057694771015550_2889901839596076523_n.jpg?_nc_cat=103&_nc_ht=scontent.fcgh22-1.fna&oh=7fd9b880436d4cf6c76c835ccb82b0b2&oe=5CE4DC82",x.alt="",x.className="glry svelte-chbe5j",B.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/15179080_1113522005432826_9029937075037668181_n.jpg?_nc_cat=109&_nc_ht=scontent.fcgh22-1.fna&oh=857f5bc18b3877bd44fc2a1512989ac4&oe=5CEA887F",B.alt="",B.className="glry svelte-chbe5j",P.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/21192572_1385498284901862_2375014102700610755_n.jpg?_nc_cat=105&_nc_ht=scontent.fcgh22-1.fna&oh=28a5db101fdbf7905653ceee8c1fb4c4&oe=5CE82DAC",P.alt="",P.className="glry svelte-chbe5j",Y.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/28279771_1561683413950014_6413261749400516546_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgh22-1.fna&oh=7c8f03fba4f86ed2002ac3765c6da508&oe=5CF5F5D6",Y.alt="",Y.className="glry svelte-chbe5j",G.src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/31340378_1628186857299669_5849242785818637308_n.jpg?_nc_cat=102&_nc_ht=scontent.fcgh22-1.fna&oh=335a17e3099b693a0c34f4d7b3e3d554&oe=5CFFDD80",G.alt="",G.className="glry svelte-chbe5j"},m(t,e){c(t,a,e),c(t,l,e),c(t,h,e),c(t,f,e),c(t,g,e),c(t,d,e),c(t,m,e),c(t,p,e),c(t,v,e),c(t,u,e),c(t,b,e),c(t,y,e),c(t,C,e),c(t,j,e),c(t,N,e),c(t,E,e),c(t,F,e),c(t,w,e),c(t,D,e),c(t,k,e),c(t,L,e),c(t,M,e),c(t,x,e),c(t,A,e),c(t,B,e),c(t,I,e),c(t,P,e),c(t,T,e),c(t,Y,e),c(t,q,e),c(t,G,e),H=!0},p:t,i(t,e){H||this.m(t,e)},o:s,d(t){t&&(i(a),i(l),i(h),i(f),i(g),i(d),i(m),i(p),i(v),i(u),i(b),i(y),i(C),i(j),i(N),i(E),i(F),i(w),i(D),i(k),i(L),i(M),i(x),i(A),i(B),i(I),i(P),i(T),i(Y),i(q),i(G))}}),n.target&&(this._fragment.c(),this._mount(n.target,n.anchor)),this._intro=!0}function y(n){var s,a,r,l;_(this,n),this._state=e({},n.data),this._intro=!!n.intro,this._fragment=(s=this,this._state,l=new b({root:s.root,store:s.store}),{c(){a=o("div"),l._fragment.c(),a.className="content svelte-17gh5xc"},m(t,e){c(t,a,e),l._mount(a,null),r=!0},p:t,i(t,e){r||this.m(t,e)},o(t){r&&(l&&l._fragment.o(t),r=!1)},d(t){t&&i(a),l.destroy()}}),n.target&&(this._fragment.c(),this._mount(n.target,n.anchor),h(this)),this._intro=!0}function C(n){var s,l,f,g,d,m,v,u,b,C,j,N;_(this,n),this._state=e({},n.data),this._intro=!!n.intro,this._fragment=(s=this,this._state,j=new p({root:s.root,store:s.store}),N=new y({root:s.root,store:s.store}),{c(){(l=o("div")).innerHTML='<div class="title svelte-giayll"><div class="wordart rainbow svelte-giayll"><span class="text svelte-giayll">FRANCIELLY, EU TE AMO</span></div>\n\t\t\t\t\t\t\t<div class="wordart blues svelte-giayll"><span class="text svelte-giayll">Feliz aniversário</span></div>\n\t\t\t\t\t\t\t<div class="wordart superhero svelte-giayll"><span class="text svelte-giayll">by paulo e Vicente</span></div></div>',f=r("\n\n"),(g=o("div")).innerHTML='<div class="icon svelte-giayll"><img class="icon__dance svelte-giayll" src="https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif" alt=""></div>\n\t\t\t\t\t<div class="title svelte-giayll"><div class="wordart rainbow svelte-giayll"><span class="text svelte-giayll">FRANCIELLY, EU TE AMO</span></div>\n\t\t\t\t\t\t<div class="wordart blues svelte-giayll"><span class="text svelte-giayll">Feliz aniversário</span></div>\n\t\t\t\t\t\t<div class="wordart superhero svelte-giayll"><span class="text svelte-giayll">by paulo e Vicente</span></div></div>\n\t\t\t\t\t<div class="icon svelte-giayll"><img class="icon__dance svelte-giayll" src="https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif" alt=""></div>',d=r("\n"),m=o("div"),v=o("div"),j._fragment.c(),u=r("\n\t"),b=o("div"),N._fragment.c(),l.className="header-mobile svelte-giayll",g.className="header svelte-giayll",v.className="main_sidebar svelte-giayll",b.className="main_content",m.className="main svelte-giayll"},m(t,e){c(t,l,e),c(t,f,e),c(t,g,e),c(t,d,e),c(t,m,e),a(m,v),j._mount(v,null),a(m,u),a(m,b),N._mount(b,null),C=!0},p:t,i(t,e){C||this.m(t,e)},o(t){var e,n;C&&(e=t,0==(n=2)&&e(),t=(()=>{--n||e()}),j&&j._fragment.o(t),N&&N._fragment.o(t),C=!1)},d(t){t&&(i(l),i(f),i(g),i(d),i(m)),j.destroy(),N.destroy()}}),n.target&&(this._fragment.c(),this._mount(n.target,n.anchor),h(this)),this._intro=!0}return setInterval(function(){for(var t=0;t<u.length;t++)u[t].style.opacity=0;v=v!=u.length-1?v+1:0,u[v].style.opacity=1},3e3),e(b.prototype,g),e(y.prototype,g),e(C.prototype,g),new C({target:document.body,data:{name:"world"}})}();
+var app = (function () {
+	'use strict';
+
+	function noop() {}
+
+	function assign(tar, src) {
+		for (var k in src) tar[k] = src[k];
+		return tar;
+	}
+
+	function assignTrue(tar, src) {
+		for (var k in src) tar[k] = 1;
+		return tar;
+	}
+
+	function callAfter(fn, i) {
+		if (i === 0) fn();
+		return () => {
+			if (!--i) fn();
+		};
+	}
+
+	function addLoc(element, file, line, column, char) {
+		element.__svelte_meta = {
+			loc: { file, line, column, char }
+		};
+	}
+
+	function run(fn) {
+		fn();
+	}
+
+	function append(target, node) {
+		target.appendChild(node);
+	}
+
+	function insert(target, node, anchor) {
+		target.insertBefore(node, anchor);
+	}
+
+	function detachNode(node) {
+		node.parentNode.removeChild(node);
+	}
+
+	function createElement(name) {
+		return document.createElement(name);
+	}
+
+	function createText(data) {
+		return document.createTextNode(data);
+	}
+
+	function setAttribute(node, attribute, value) {
+		if (value == null) node.removeAttribute(attribute);
+		else node.setAttribute(attribute, value);
+	}
+
+	function setStyle(node, key, value) {
+		node.style.setProperty(key, value);
+	}
+
+	function blankObject() {
+		return Object.create(null);
+	}
+
+	function destroy(detach) {
+		this.destroy = noop;
+		this.fire('destroy');
+		this.set = noop;
+
+		this._fragment.d(detach !== false);
+		this._fragment = null;
+		this._state = {};
+	}
+
+	function destroyDev(detach) {
+		destroy.call(this, detach);
+		this.destroy = function() {
+			console.warn('Component was already destroyed');
+		};
+	}
+
+	function _differs(a, b) {
+		return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+	}
+
+	function fire(eventName, data) {
+		var handlers =
+			eventName in this._handlers && this._handlers[eventName].slice();
+		if (!handlers) return;
+
+		for (var i = 0; i < handlers.length; i += 1) {
+			var handler = handlers[i];
+
+			if (!handler.__calling) {
+				try {
+					handler.__calling = true;
+					handler.call(this, data);
+				} finally {
+					handler.__calling = false;
+				}
+			}
+		}
+	}
+
+	function flush(component) {
+		component._lock = true;
+		callAll(component._beforecreate);
+		callAll(component._oncreate);
+		callAll(component._aftercreate);
+		component._lock = false;
+	}
+
+	function get() {
+		return this._state;
+	}
+
+	function init(component, options) {
+		component._handlers = blankObject();
+		component._slots = blankObject();
+		component._bind = options._bind;
+		component._staged = {};
+
+		component.options = options;
+		component.root = options.root || component;
+		component.store = options.store || component.root.store;
+
+		if (!options.root) {
+			component._beforecreate = [];
+			component._oncreate = [];
+			component._aftercreate = [];
+		}
+	}
+
+	function on(eventName, handler) {
+		var handlers = this._handlers[eventName] || (this._handlers[eventName] = []);
+		handlers.push(handler);
+
+		return {
+			cancel: function() {
+				var index = handlers.indexOf(handler);
+				if (~index) handlers.splice(index, 1);
+			}
+		};
+	}
+
+	function set(newState) {
+		this._set(assign({}, newState));
+		if (this.root._lock) return;
+		flush(this.root);
+	}
+
+	function _set(newState) {
+		var oldState = this._state,
+			changed = {},
+			dirty = false;
+
+		newState = assign(this._staged, newState);
+		this._staged = {};
+
+		for (var key in newState) {
+			if (this._differs(newState[key], oldState[key])) changed[key] = dirty = true;
+		}
+		if (!dirty) return;
+
+		this._state = assign(assign({}, oldState), newState);
+		this._recompute(changed, this._state);
+		if (this._bind) this._bind(changed, this._state);
+
+		if (this._fragment) {
+			this.fire("state", { changed: changed, current: this._state, previous: oldState });
+			this._fragment.p(changed, this._state);
+			this.fire("update", { changed: changed, current: this._state, previous: oldState });
+		}
+	}
+
+	function _stage(newState) {
+		assign(this._staged, newState);
+	}
+
+	function setDev(newState) {
+		if (typeof newState !== 'object') {
+			throw new Error(
+				this._debugName + '.set was called without an object of data key-values to update.'
+			);
+		}
+
+		this._checkReadOnly(newState);
+		set.call(this, newState);
+	}
+
+	function callAll(fns) {
+		while (fns && fns.length) fns.shift()();
+	}
+
+	function _mount(target, anchor) {
+		this._fragment[this._fragment.i ? 'i' : 'm'](target, anchor || null);
+	}
+
+	var protoDev = {
+		destroy: destroyDev,
+		get,
+		fire,
+		on,
+		set: setDev,
+		_recompute: noop,
+		_set,
+		_stage,
+		_mount,
+		_differs
+	};
+
+	/* src/components/Audio.html generated by Svelte v2.16.1 */
+
+	var methods = {
+	  play() {
+	    const { play } = this.get();
+	    const music = this.refs.audio;
+	    console.log(play);
+	    play ? music.pause(): music.play();
+	    this.set({play: !play});
+	  },
+	  pause() {
+	    const { audio } = this.refs;
+	    audio.pause();
+	  }
+	};
+
+	function oncreate() {
+	  const audioArray = [
+	    'https://ia800503.us.archive.org/4/items/CarelessWhisper_532/33CarelessWhisper.ogg',
+	    'https://upload.wikimedia.org/wikipedia/commons/c/c6/Kenny_G_-_Forever_In_Love.ogg'
+	  ];
+
+	  this.set({file: audioArray[Math.round(Math.random())]});
+	  this.set({play: false});
+	  
+	}
+	const file = "src/components/Audio.html";
+
+	function create_main_fragment(component, ctx) {
+		var iframe, current;
+
+		return {
+			c: function create() {
+				iframe = createElement("iframe");
+				iframe.src = ctx.file;
+				setAttribute(iframe, "allow", "autoplay");
+				iframe.id = "audio";
+				setStyle(iframe, "padding-left", "35px");
+				setStyle(iframe, "width", "150px");
+				setStyle(iframe, "display", "block");
+				setStyle(iframe, "border", "none");
+				iframe.className = "svelte-1nm58wk";
+				addLoc(iframe, file, 1, 2, 12);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, iframe, anchor);
+				current = true;
+			},
+
+			p: function update(changed, ctx) {
+				if (changed.file) {
+					iframe.src = ctx.file;
+				}
+			},
+
+			i: function intro(target, anchor) {
+				if (current) return;
+
+				this.m(target, anchor);
+			},
+
+			o: run,
+
+			d: function destroy$$1(detach) {
+				if (detach) {
+					detachNode(iframe);
+				}
+			}
+		};
+	}
+
+	function Audio(options) {
+		this._debugName = '<Audio>';
+		if (!options || (!options.target && !options.root)) {
+			throw new Error("'target' is a required option");
+		}
+
+		init(this, options);
+		this._state = assign({}, options.data);
+		if (!('file' in this._state)) console.warn("<Audio> was created without expected data property 'file'");
+		this._intro = !!options.intro;
+
+		this._fragment = create_main_fragment(this, this._state);
+
+		this.root._oncreate.push(() => {
+			oncreate.call(this);
+			this.fire("update", { changed: assignTrue({}, this._state), current: this._state });
+		});
+
+		if (options.target) {
+			if (options.hydrate) throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			this._fragment.c();
+			this._mount(options.target, options.anchor);
+
+			flush(this);
+		}
+
+		this._intro = true;
+	}
+
+	assign(Audio.prototype, protoDev);
+	assign(Audio.prototype, methods);
+
+	Audio.prototype._checkReadOnly = function _checkReadOnly(newState) {
+	};
+
+	/* src/components/Sidebar.html generated by Svelte v2.16.1 */
+
+
+
+	const file$1 = "src/components/Sidebar.html";
+
+	function create_main_fragment$1(component, ctx) {
+		var div, img, text, current;
+
+		var audio = new Audio({
+			root: component.root,
+			store: component.store
+		});
+
+		return {
+			c: function create() {
+				div = createElement("div");
+				img = createElement("img");
+				text = createText("\n");
+				audio._fragment.c();
+				img.className = "icon-sidebar__dance svelte-c9dmgb";
+				img.src = "https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif";
+				img.alt = "";
+				addLoc(img, file$1, 1, 4, 31);
+				div.className = "icon-sidebar svelte-c9dmgb";
+				addLoc(div, file$1, 0, 0, 0);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div, anchor);
+				append(div, img);
+				insert(target, text, anchor);
+				audio._mount(target, anchor);
+				current = true;
+			},
+
+			p: noop,
+
+			i: function intro(target, anchor) {
+				if (current) return;
+
+				this.m(target, anchor);
+			},
+
+			o: function outro(outrocallback) {
+				if (!current) return;
+
+				if (audio) audio._fragment.o(outrocallback);
+				current = false;
+			},
+
+			d: function destroy$$1(detach) {
+				if (detach) {
+					detachNode(div);
+					detachNode(text);
+				}
+
+				audio.destroy(detach);
+			}
+		};
+	}
+
+	function Sidebar(options) {
+		this._debugName = '<Sidebar>';
+		if (!options || (!options.target && !options.root)) {
+			throw new Error("'target' is a required option");
+		}
+
+		init(this, options);
+		this._state = assign({}, options.data);
+		this._intro = !!options.intro;
+
+		this._fragment = create_main_fragment$1(this, this._state);
+
+		if (options.target) {
+			if (options.hydrate) throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			this._fragment.c();
+			this._mount(options.target, options.anchor);
+
+			flush(this);
+		}
+
+		this._intro = true;
+	}
+
+	assign(Sidebar.prototype, protoDev);
+
+	Sidebar.prototype._checkReadOnly = function _checkReadOnly(newState) {
+	};
+
+	/* src/components/Gallery.html generated by Svelte v2.16.1 */
+
+	var current = 0,
+	slides = document.getElementsByClassName("glry");
+
+	setInterval(function() {
+	  for (var i = 0; i < slides.length; i++) {
+	    slides[i].style.opacity = 0;
+	  }
+	  current = (current != slides.length - 1) ? current + 1 : 0;
+	  slides[current].style.opacity = 1;
+	}, 3000);
+
+	const file$2 = "src/components/Gallery.html";
+
+	function create_main_fragment$2(component, ctx) {
+		var img0, text0, img1, text1, img2, text2, img3, text3, img4, text4, img5, text5, img6, text6, img7, text7, img8, text8, img9, text9, img10, text10, img11, text11, img12, text12, img13, text13, img14, text14, img15, current_1;
+
+		return {
+			c: function create() {
+				img0 = createElement("img");
+				text0 = createText("\n");
+				img1 = createElement("img");
+				text1 = createText("\n\n");
+				img2 = createElement("img");
+				text2 = createText("\n");
+				img3 = createElement("img");
+				text3 = createText("\n");
+				img4 = createElement("img");
+				text4 = createText("\n");
+				img5 = createElement("img");
+				text5 = createText("\n");
+				img6 = createElement("img");
+				text6 = createText("\n");
+				img7 = createElement("img");
+				text7 = createText("\n");
+				img8 = createElement("img");
+				text8 = createText("\n");
+				img9 = createElement("img");
+				text9 = createText("\n");
+				img10 = createElement("img");
+				text10 = createText("\n");
+				img11 = createElement("img");
+				text11 = createText("\n");
+				img12 = createElement("img");
+				text12 = createText("\n");
+				img13 = createElement("img");
+				text13 = createText("\n");
+				img14 = createElement("img");
+				text14 = createText("\n");
+				img15 = createElement("img");
+				img0.className = "glry svelte-chbe5j";
+				img0.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/482919_321495741302127_350042199_n.jpg?_nc_cat=100&_nc_ht=scontent.fcgh22-1.fna&oh=25be4d41ca5242295bc974a34c41123d&oe=5CEAD6D9";
+				img0.alt = "Fill Murray";
+				addLoc(img0, file$2, 0, 0, 0);
+				img1.className = "glry svelte-chbe5j";
+				img1.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/1607062_496094667175566_1459171271_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=adb7c8ae3a95527e96a0e681d436ee97&oe=5CF6BDD1";
+				img1.alt = "Place Cage";
+				addLoc(img1, file$2, 1, 0, 220);
+				img2.className = "glry svelte-chbe5j";
+				img2.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11149390_744516519000045_2967058983600643140_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=7376a636ed9d3749cb906e48f6dd8256&oe=5CE8BE92";
+				img2.alt = "Place Cage";
+				addLoc(img2, file$2, 3, 0, 442);
+				img3.className = "glry svelte-chbe5j";
+				img3.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11203077_751857984932565_2038460729392045720_n.jpg?_nc_cat=103&_nc_ht=scontent.fcgh22-1.fna&oh=294516b194dfba278bc46c57981e0482&oe=5CDF1241";
+				img3.alt = "Place Cage";
+				addLoc(img3, file$2, 4, 0, 673);
+				img4.className = "glry svelte-chbe5j";
+				img4.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11330044_761620043956359_7177285383957824631_n.jpg?_nc_cat=109&_nc_ht=scontent.fcgh22-1.fna&oh=6b5632f4823a30ca479ea80c3883722f&oe=5CE4E66B";
+				img4.alt = "Place Cage";
+				addLoc(img4, file$2, 5, 0, 904);
+				img5.className = "glry svelte-chbe5j";
+				img5.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11427736_776285782489785_5376530598464170536_n.jpg?_nc_cat=102&_nc_ht=scontent.fcgh22-1.fna&oh=4e85ef78b39be5300fc5530527ef65c6&oe=5CE16D8B";
+				img5.alt = "Place Cage";
+				addLoc(img5, file$2, 6, 0, 1135);
+				img6.className = "glry svelte-chbe5j";
+				img6.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11053585_782396231878740_8757566933195016366_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgh22-1.fna&oh=5aac9edebe06c2accec6d51e1a87c0e5&oe=5CEBFFCF";
+				img6.alt = "Place Cage";
+				addLoc(img6, file$2, 7, 0, 1366);
+				img7.className = "glry svelte-chbe5j";
+				img7.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/11800428_794852727299757_4887307670715962091_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=e1697931b560a72fa111162761620fec&oe=5CEC2DD3";
+				img7.alt = "Place Cage";
+				addLoc(img7, file$2, 8, 0, 1597);
+				img8.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/1002361_838302252954804_1853296951518793956_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgh22-1.fna&oh=c1aa9395cea9726546f8fd4966939ffa&oe=5CED795B";
+				img8.alt = "";
+				img8.className = "glry svelte-chbe5j";
+				addLoc(img8, file$2, 9, 0, 1828);
+				img9.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/12549088_883453608439668_60351576491173231_n.jpg?_nc_cat=106&_nc_ht=scontent.fcgh22-1.fna&oh=85f9189684afc92f2aa738de7d0dac48&oe=5CF51D86";
+				img9.alt = "";
+				img9.className = "glry svelte-chbe5j";
+				addLoc(img9, file$2, 10, 0, 2048);
+				img10.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/934732_920910801360615_2149040823513429832_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgh22-1.fna&oh=bf02924ee5a089d2b02f480b7897c13b&oe=5CF71BD2";
+				img10.alt = "";
+				img10.className = "glry svelte-chbe5j";
+				addLoc(img10, file$2, 11, 0, 2267);
+				img11.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/14591593_1057694771015550_2889901839596076523_n.jpg?_nc_cat=103&_nc_ht=scontent.fcgh22-1.fna&oh=7fd9b880436d4cf6c76c835ccb82b0b2&oe=5CE4DC82";
+				img11.alt = "";
+				img11.className = "glry svelte-chbe5j";
+				addLoc(img11, file$2, 12, 0, 2486);
+				img12.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/15179080_1113522005432826_9029937075037668181_n.jpg?_nc_cat=109&_nc_ht=scontent.fcgh22-1.fna&oh=857f5bc18b3877bd44fc2a1512989ac4&oe=5CEA887F";
+				img12.alt = "";
+				img12.className = "glry svelte-chbe5j";
+				addLoc(img12, file$2, 13, 0, 2708);
+				img13.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/21192572_1385498284901862_2375014102700610755_n.jpg?_nc_cat=105&_nc_ht=scontent.fcgh22-1.fna&oh=28a5db101fdbf7905653ceee8c1fb4c4&oe=5CE82DAC";
+				img13.alt = "";
+				img13.className = "glry svelte-chbe5j";
+				addLoc(img13, file$2, 14, 0, 2930);
+				img14.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/28279771_1561683413950014_6413261749400516546_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgh22-1.fna&oh=7c8f03fba4f86ed2002ac3765c6da508&oe=5CF5F5D6";
+				img14.alt = "";
+				img14.className = "glry svelte-chbe5j";
+				addLoc(img14, file$2, 15, 0, 3152);
+				img15.src = "https://scontent.fcgh22-1.fna.fbcdn.net/v/t1.0-9/31340378_1628186857299669_5849242785818637308_n.jpg?_nc_cat=102&_nc_ht=scontent.fcgh22-1.fna&oh=335a17e3099b693a0c34f4d7b3e3d554&oe=5CFFDD80";
+				img15.alt = "";
+				img15.className = "glry svelte-chbe5j";
+				addLoc(img15, file$2, 16, 0, 3374);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, img0, anchor);
+				insert(target, text0, anchor);
+				insert(target, img1, anchor);
+				insert(target, text1, anchor);
+				insert(target, img2, anchor);
+				insert(target, text2, anchor);
+				insert(target, img3, anchor);
+				insert(target, text3, anchor);
+				insert(target, img4, anchor);
+				insert(target, text4, anchor);
+				insert(target, img5, anchor);
+				insert(target, text5, anchor);
+				insert(target, img6, anchor);
+				insert(target, text6, anchor);
+				insert(target, img7, anchor);
+				insert(target, text7, anchor);
+				insert(target, img8, anchor);
+				insert(target, text8, anchor);
+				insert(target, img9, anchor);
+				insert(target, text9, anchor);
+				insert(target, img10, anchor);
+				insert(target, text10, anchor);
+				insert(target, img11, anchor);
+				insert(target, text11, anchor);
+				insert(target, img12, anchor);
+				insert(target, text12, anchor);
+				insert(target, img13, anchor);
+				insert(target, text13, anchor);
+				insert(target, img14, anchor);
+				insert(target, text14, anchor);
+				insert(target, img15, anchor);
+				current_1 = true;
+			},
+
+			p: noop,
+
+			i: function intro(target, anchor) {
+				if (current_1) return;
+
+				this.m(target, anchor);
+			},
+
+			o: run,
+
+			d: function destroy$$1(detach) {
+				if (detach) {
+					detachNode(img0);
+					detachNode(text0);
+					detachNode(img1);
+					detachNode(text1);
+					detachNode(img2);
+					detachNode(text2);
+					detachNode(img3);
+					detachNode(text3);
+					detachNode(img4);
+					detachNode(text4);
+					detachNode(img5);
+					detachNode(text5);
+					detachNode(img6);
+					detachNode(text6);
+					detachNode(img7);
+					detachNode(text7);
+					detachNode(img8);
+					detachNode(text8);
+					detachNode(img9);
+					detachNode(text9);
+					detachNode(img10);
+					detachNode(text10);
+					detachNode(img11);
+					detachNode(text11);
+					detachNode(img12);
+					detachNode(text12);
+					detachNode(img13);
+					detachNode(text13);
+					detachNode(img14);
+					detachNode(text14);
+					detachNode(img15);
+				}
+			}
+		};
+	}
+
+	function Gallery(options) {
+		this._debugName = '<Gallery>';
+		if (!options || (!options.target && !options.root)) {
+			throw new Error("'target' is a required option");
+		}
+
+		init(this, options);
+		this._state = assign({}, options.data);
+		this._intro = !!options.intro;
+
+		this._fragment = create_main_fragment$2(this, this._state);
+
+		if (options.target) {
+			if (options.hydrate) throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			this._fragment.c();
+			this._mount(options.target, options.anchor);
+		}
+
+		this._intro = true;
+	}
+
+	assign(Gallery.prototype, protoDev);
+
+	Gallery.prototype._checkReadOnly = function _checkReadOnly(newState) {
+	};
+
+	/* src/components/Content.html generated by Svelte v2.16.1 */
+
+
+
+	const file$3 = "src/components/Content.html";
+
+	function create_main_fragment$3(component, ctx) {
+		var div, current;
+
+		var gallery = new Gallery({
+			root: component.root,
+			store: component.store
+		});
+
+		return {
+			c: function create() {
+				div = createElement("div");
+				gallery._fragment.c();
+				div.className = "content svelte-17gh5xc";
+				addLoc(div, file$3, 0, 0, 0);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div, anchor);
+				gallery._mount(div, null);
+				current = true;
+			},
+
+			p: noop,
+
+			i: function intro(target, anchor) {
+				if (current) return;
+
+				this.m(target, anchor);
+			},
+
+			o: function outro(outrocallback) {
+				if (!current) return;
+
+				if (gallery) gallery._fragment.o(outrocallback);
+				current = false;
+			},
+
+			d: function destroy$$1(detach) {
+				if (detach) {
+					detachNode(div);
+				}
+
+				gallery.destroy();
+			}
+		};
+	}
+
+	function Content(options) {
+		this._debugName = '<Content>';
+		if (!options || (!options.target && !options.root)) {
+			throw new Error("'target' is a required option");
+		}
+
+		init(this, options);
+		this._state = assign({}, options.data);
+		this._intro = !!options.intro;
+
+		this._fragment = create_main_fragment$3(this, this._state);
+
+		if (options.target) {
+			if (options.hydrate) throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			this._fragment.c();
+			this._mount(options.target, options.anchor);
+
+			flush(this);
+		}
+
+		this._intro = true;
+	}
+
+	assign(Content.prototype, protoDev);
+
+	Content.prototype._checkReadOnly = function _checkReadOnly(newState) {
+	};
+
+	/* src/App.html generated by Svelte v2.16.1 */
+
+
+
+
+	const file$4 = "src/App.html";
+
+	function create_main_fragment$4(component, ctx) {
+		var div4, div3, div0, span0, text1, div1, span1, text3, div2, span2, text5, div11, div5, img0, text6, div9, div6, span3, text8, div7, span4, text10, div8, span5, text12, div10, img1, text13, div14, div12, text14, div13, current;
+
+		var sidebar = new Sidebar({
+			root: component.root,
+			store: component.store
+		});
+
+		var content = new Content({
+			root: component.root,
+			store: component.store
+		});
+
+		return {
+			c: function create() {
+				div4 = createElement("div");
+				div3 = createElement("div");
+				div0 = createElement("div");
+				span0 = createElement("span");
+				span0.textContent = "FRANCIELLY, EU TE AMO";
+				text1 = createText("\n\t\t\t\t");
+				div1 = createElement("div");
+				span1 = createElement("span");
+				span1.textContent = "Feliz aniversário";
+				text3 = createText("\t\n\t\t\t\t");
+				div2 = createElement("div");
+				span2 = createElement("span");
+				span2.textContent = "by paulo e Vicente";
+				text5 = createText("\n\n");
+				div11 = createElement("div");
+				div5 = createElement("div");
+				img0 = createElement("img");
+				text6 = createText("\n\t\t");
+				div9 = createElement("div");
+				div6 = createElement("div");
+				span3 = createElement("span");
+				span3.textContent = "FRANCIELLY, EU TE AMO";
+				text8 = createText("\n\t\t\t");
+				div7 = createElement("div");
+				span4 = createElement("span");
+				span4.textContent = "Feliz aniversário";
+				text10 = createText("\t\n\t\t\t");
+				div8 = createElement("div");
+				span5 = createElement("span");
+				span5.textContent = "by paulo e Vicente";
+				text12 = createText("\n\t\t");
+				div10 = createElement("div");
+				img1 = createElement("img");
+				text13 = createText("\n");
+				div14 = createElement("div");
+				div12 = createElement("div");
+				sidebar._fragment.c();
+				text14 = createText("\n\t");
+				div13 = createElement("div");
+				content._fragment.c();
+				span0.className = "text svelte-giayll";
+				addLoc(span0, file$4, 3, 33, 84);
+				div0.className = "wordart rainbow svelte-giayll";
+				addLoc(div0, file$4, 3, 4, 55);
+				span1.className = "text svelte-giayll";
+				addLoc(span1, file$4, 4, 31, 169);
+				div1.className = "wordart blues svelte-giayll";
+				addLoc(div1, file$4, 4, 4, 142);
+				span2.className = "text svelte-giayll";
+				addLoc(span2, file$4, 5, 35, 255);
+				div2.className = "wordart superhero svelte-giayll";
+				addLoc(div2, file$4, 5, 4, 224);
+				div3.className = "title svelte-giayll";
+				addLoc(div3, file$4, 2, 2, 31);
+				div4.className = "header-mobile svelte-giayll";
+				addLoc(div4, file$4, 1, 0, 1);
+				img0.className = "icon__dance svelte-giayll";
+				img0.src = "https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif";
+				img0.alt = "";
+				addLoc(img0, file$4, 12, 4, 371);
+				div5.className = "icon svelte-giayll";
+				addLoc(div5, file$4, 11, 2, 348);
+				span3.className = "text svelte-giayll";
+				addLoc(span3, file$4, 15, 32, 528);
+				div6.className = "wordart rainbow svelte-giayll";
+				addLoc(div6, file$4, 15, 3, 499);
+				span4.className = "text svelte-giayll";
+				addLoc(span4, file$4, 16, 30, 612);
+				div7.className = "wordart blues svelte-giayll";
+				addLoc(div7, file$4, 16, 3, 585);
+				span5.className = "text svelte-giayll";
+				addLoc(span5, file$4, 17, 34, 697);
+				div8.className = "wordart superhero svelte-giayll";
+				addLoc(div8, file$4, 17, 3, 666);
+				div9.className = "title svelte-giayll";
+				addLoc(div9, file$4, 14, 2, 476);
+				img1.className = "icon__dance svelte-giayll";
+				img1.src = "https://media.giphy.com/media/14kqI3Y4urS3rG/giphy.gif";
+				img1.alt = "";
+				addLoc(img1, file$4, 20, 4, 782);
+				div10.className = "icon svelte-giayll";
+				addLoc(div10, file$4, 19, 2, 759);
+				div11.className = "header svelte-giayll";
+				addLoc(div11, file$4, 10, 0, 325);
+				div12.className = "main_sidebar svelte-giayll";
+				addLoc(div12, file$4, 24, 1, 912);
+				div13.className = "main_content";
+				addLoc(div13, file$4, 27, 1, 962);
+				div14.className = "main svelte-giayll";
+				addLoc(div14, file$4, 23, 0, 892);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div4, anchor);
+				append(div4, div3);
+				append(div3, div0);
+				append(div0, span0);
+				append(div3, text1);
+				append(div3, div1);
+				append(div1, span1);
+				append(div3, text3);
+				append(div3, div2);
+				append(div2, span2);
+				insert(target, text5, anchor);
+				insert(target, div11, anchor);
+				append(div11, div5);
+				append(div5, img0);
+				append(div11, text6);
+				append(div11, div9);
+				append(div9, div6);
+				append(div6, span3);
+				append(div9, text8);
+				append(div9, div7);
+				append(div7, span4);
+				append(div9, text10);
+				append(div9, div8);
+				append(div8, span5);
+				append(div11, text12);
+				append(div11, div10);
+				append(div10, img1);
+				insert(target, text13, anchor);
+				insert(target, div14, anchor);
+				append(div14, div12);
+				sidebar._mount(div12, null);
+				append(div14, text14);
+				append(div14, div13);
+				content._mount(div13, null);
+				current = true;
+			},
+
+			p: noop,
+
+			i: function intro(target, anchor) {
+				if (current) return;
+
+				this.m(target, anchor);
+			},
+
+			o: function outro(outrocallback) {
+				if (!current) return;
+
+				outrocallback = callAfter(outrocallback, 2);
+
+				if (sidebar) sidebar._fragment.o(outrocallback);
+				if (content) content._fragment.o(outrocallback);
+				current = false;
+			},
+
+			d: function destroy$$1(detach) {
+				if (detach) {
+					detachNode(div4);
+					detachNode(text5);
+					detachNode(div11);
+					detachNode(text13);
+					detachNode(div14);
+				}
+
+				sidebar.destroy();
+				content.destroy();
+			}
+		};
+	}
+
+	function App(options) {
+		this._debugName = '<App>';
+		if (!options || (!options.target && !options.root)) {
+			throw new Error("'target' is a required option");
+		}
+
+		init(this, options);
+		this._state = assign({}, options.data);
+		this._intro = !!options.intro;
+
+		this._fragment = create_main_fragment$4(this, this._state);
+
+		if (options.target) {
+			if (options.hydrate) throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			this._fragment.c();
+			this._mount(options.target, options.anchor);
+
+			flush(this);
+		}
+
+		this._intro = true;
+	}
+
+	assign(App.prototype, protoDev);
+
+	App.prototype._checkReadOnly = function _checkReadOnly(newState) {
+	};
+
+	const app = new App({
+		target: document.body,
+		data: {
+			name: 'world'
+		}
+	});
+
+	return app;
+
+}());
 //# sourceMappingURL=bundle.js.map
